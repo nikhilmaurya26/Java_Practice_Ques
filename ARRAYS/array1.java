@@ -23,5 +23,7 @@ public class array1 {
                 break;
             }
         }
+
+        
     }
 }
