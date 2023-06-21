@@ -1,6 +1,7 @@
 class mylinkedlist{
     public Node head = null;    
     public Node tail = null; 
+
     class Node{
         int data; 
         Node next;
@@ -11,45 +12,31 @@ class mylinkedlist{
         }
     }
    
-
-    public void addatstart(int data){
+    public void addatend(int data){
 
         Node newnode = new Node(data);
 
         if(head==null){
+            
             head=newnode;
-            newnode.next=null;
             tail=newnode;
+            // tail.next=null;
         }
         else{
-            newnode.next=head;
-            head = newnode;
+            tail.next=newnode;
+            tail=newnode;
         }
- }
-
- public void addatend(int data){
-
-    Node newnode = new Node(data);
-
-    if(head==null){
-        
-        head=newnode;
-        tail=newnode;
-    }
-    else{
-        tail.next=newnode;
-        tail=newnode;
-
-    }
  }
 
  public void printList() {   
+
+    Node currentNode = head;   
     if(head == null) {    
         System.out.println("Linked List is empty"); 
     }else {  
         System.out.println("Nodes of singly linked list: "); 
         //currentNode will point to head    
-        Node currentNode = head;      
+        // Node currentNode = head;      
         while(currentNode != null) {     
             System.out.print(currentNode.data + " ");    
             currentNode = currentNode.next;    
@@ -59,18 +46,17 @@ class mylinkedlist{
 }   
 }
 
-public class Linklist1{
 
-public static void main(String[] args) {
+
+
+public class linkedlist2 {
+    public static void main(String[] args) {
     
-    mylinkedlist list = new mylinkedlist();
-
-    list.addatstart(2);
-    list.addatstart(4);
-
-    list.printList();
-    list.addatend(9);
-    list.printList();
-}
-
+        mylinkedlist list = new mylinkedlist();
+        list.printList();
+        list.addatend(5);
+        list.addatend(7);
+    
+        list.printList();
+    }
 }
